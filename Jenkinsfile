@@ -49,7 +49,7 @@
 //     }
 // }
 
-// for env or directory and parameters
+// for env or directory and parameters  General Scripted
 pipeline {
     agent any
 
@@ -103,4 +103,37 @@ pipeline {
         }
     }
 }
+//############## Scripted Pipeline ################
+// properties([
+//     parameters([
+//         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Choose Terraform action')
+//     ])
+// ])
+
+// node {
+//     def TF_DIR = 'day-2_indroduction'
+
+//     stage('Git Checkout') {
+//         git branch: 'main', url: 'https://github.com/mallikarjunvtalent/terraform.git'
+//     }
+
+//     stage('Terraform Init') {
+//         dir(TF_DIR) {
+//             sh 'terraform init'
+//         }
+//     }
+
+//     stage('Terraform Plan') {
+//         dir(TF_DIR) {
+//             sh 'terraform plan'
+//         }
+//     }
+
+//     stage('Terraform Apply/Destroy') {
+//         echo "⚙️ Running: terraform ${params.action} ..."
+//         dir(TF_DIR) {
+//             sh "terraform ${params.action} -auto-approve"
+//         }
+//     }
+// }
 
