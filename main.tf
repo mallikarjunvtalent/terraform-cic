@@ -9,6 +9,6 @@ resource "aws_instance" "dev" {
       Name = "test"
     }
 }
-resource "aws_s3_bucket" "name" {   
+resource "aws_s3_bucket" "name" {
   bucket = "mynewbucketfromterrafrom0123456789"
 }
